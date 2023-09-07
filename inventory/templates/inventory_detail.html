@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<legend class="display-5 border-bottom pd-2 mb-4 text-center text-light py-4">UPDATE PRODUCT</legend>
+
+<div class="content-section">
+    <form method="POST">
+        <fieldset>
+            {% csrf_token %}
+            <div class="container form-group text-light">
+                {{form}}
+            </div>
+            <div class="container d-grid gap-2 col-3 py-5">
+                <button class="btn btn-light" type="submit">Update Inventory</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+{% endblock %}

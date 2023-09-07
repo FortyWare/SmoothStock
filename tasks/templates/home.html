@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">
+            <img src="https://i.ibb.co/LryvCds/smoothstock.png" alt="Logo" width="120" height="120" class="d-inline-block align-text-top">SmoothStock</h1>
+            
+            
+
+            <nav class="container py-5">
+                <p>In a world where organization is the key to success, we understand the importance of managing your inventory, tasks, and contacts with ease and precision. That's why we're thrilled to present SmoothStock, a cutting-edge web application that brings together the power of efficient inventory management, task tracking, and seamless contact management in one unified platform.</p>
+                
+                
+
+                <p>Navigating the complexities of your business or personal life has never been this straightforward. With SmoothStock, you'll unlock a suite of robust features to transform your productivity:</p>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <h5>Inventory Management</h5>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Effortlessly oversee your products, stock levels, and suppliers. With real-time updates and detailed insights, you'll always stay ahead of your inventory needs, ensuring smoother operations and happier customers.
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <h5>Task Lists</h5>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Tackle your to-do list like a pro. Create, organize, and prioritize tasks with ease. Whether you're a project manager, entrepreneur, or busy parent, our task management tools will help you stay on top of your game.
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <h5>Contact Lists</h5>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Your network is your net worth. Manage your contacts effortlessly, categorize them for easy access, and stay in touch with clients, colleagues, and friends. Building and nurturing relationships has never been more streamlined.
+                      </div>
+                    </div>
+                  </div>
+
+                <p class="py-4">In SmoothStock, we're committed to simplifying your life and optimizing your workflow. Our user-friendly interface, customizable features, and robust reporting capabilities are designed to give you the edge you need in today's fast-paced world.</p>
+
+                <h5>This WebApp is powered by Django, SQLite and Bootstrap</h5>
+            </nav>
+
+        {% if user.is_authenticated %}
+        <h1 class="text-center py-2">Hello {{user.username}}</h1>
+
+        <p class="container py-2">Why did the web app break up with the cardboard box and start dating a pillow?</p>
+
+        <p class="container">Because the cardboard box couldn't handle its commitment issues, always folding under pressure, while the pillow was just so soft and supportive, offering the perfect RESTful relationship! 😅</p>
+        {% else %}
+
+        <div class="text-center">
+            <a class="btn btn-dark" href="/signup/">
+                Register
+            </a>
+            <a class="btn btn-secondary" href="/signin/">
+                Login
+            </a>
+        </div>
+
+        {% endif %}
+
+
+
+
+        
+
+    </section>
+</main>
+
+<nav class="container">
+
+    <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success text-light" style="width: 80%">80%</div>
+      </div>
+      
+    <p class="text-center py-5 text-light">
+        This page is still in developement 
+    </p>
+</nav>
+
+{% endblock %}
+

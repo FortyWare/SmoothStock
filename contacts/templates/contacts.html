@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<legend class="display-5 border-bottom pd-2 mb-4 text-center text-light py-4">CONTACTS (WIP)</legend>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a type="button" class="btn btn-success" href="/contact/create/">Create a contact</a>
+              </div>
+
+            <ul class="list-group">
+                {% for contact in contacts %}
+                <a class="list-group-item mt-5" href="#">
+                    <h2 class="fw-bold">{{contact.name}}</h2>
+                    <p>Email: {{contact.email}}</p>
+                    <p>Phone: {{contact.phone}}</p>
+                    <p>{{contact.id}}</p>
+                </a>
+                <form action="{% url 'delete_contact' contact.id %}" method="POST">
+                    {% csrf_token %}
+                    <a class="btn btn-danger px-2">Delete</a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

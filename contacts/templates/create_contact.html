@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+            <h1 class="text-center py-2">Create a Contact</h1>
+
+            <form action="/contact/create/" method="POST" class="card card-body">
+                {{error}}
+                {% csrf_token %}
+        
+                {{form.as_p}}
+        
+                <button class="btn btn-primary">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
