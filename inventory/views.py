@@ -34,7 +34,7 @@ def add_product(request):
             new_inventory = add_form.save(commit=False)
             new_inventory.sales = float(add_form.data['cost_per_item']) * float(add_form.data['quantity_sold'])
             new_inventory.save()
-            return redirect("/inventory/list")
+            return redirect("/inventory/list/")
     else:
         add_form = AddInventoryForm()
 
